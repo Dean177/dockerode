@@ -22,12 +22,14 @@
   "devDependencies": {
     "bluebird": "^3.5.0",
     "chai": "^3.5.0",
+    "eslint": "^4.5.0",
     "memorystream": "~0.2.0",
     "mocha": "^3.2.0"
   },
   "main": "./lib/docker",
   "types": "./dockerode.d.ts",
   "scripts": {
+    "lint": "eslint examples/ lib/ test/",
     "test": "./node_modules/mocha/bin/mocha -R spec"
   },
   "license": "Apache-2.0",
