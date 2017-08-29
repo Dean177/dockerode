@@ -15,8 +15,11 @@
     "docker.io"
   ],
   "dependencies": {
+    "@types/node": "^8.0.25",
     "concat-stream": "~1.5.1",
     "docker-modem": "^1.0.0",
+    "events": "^1.1.1",
+    "stream": "^0.0.2",
     "tar-fs": "~1.12.0"
   },
   "devDependencies": {
@@ -24,13 +27,13 @@
     "chai": "^3.5.0",
     "eslint": "^4.5.0",
     "memorystream": "~0.2.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.5.0"
   },
   "main": "./lib/docker",
   "types": "./dockerode.d.ts",
   "scripts": {
     "lint": "eslint examples/ lib/ test/",
-    "test": "./node_modules/mocha/bin/mocha -R spec"
+    "test": "mocha -R spec"
   },
   "license": "Apache-2.0",
   "engines": {

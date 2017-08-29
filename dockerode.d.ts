@@ -8,8 +8,8 @@
 
 /// <reference types="node" />
 
-import * as stream from 'stream';
 import * as events from 'events';
+import { ServiceInfo } from './api-typings/swarm/service';
 
 declare namespace Dockerode {
   interface Container {
@@ -663,7 +663,7 @@ declare namespace Dockerode {
     key?: string;
     protocol?: "https" | "http";
     timeout?: number;
-    Promise?: typeof Promise;
+    Promise?: Promise<any>;
   }
 
   interface SecretVersion {
@@ -869,7 +869,8 @@ declare class Dockerode {
   listImages(callback: Callback<Dockerode.ImageInfo[]>): void;
   listImages(options?: {}): Promise<Dockerode.ImageInfo[]>;
 
-  listServices(options: {}, callback: Callback<any[]>): void;
+  listServices(options: {}, callback: Callback<ServiceInfo[]>): void;
+  listServices(options: {}, callback: Callback<ServiceInfo[]>): void;
   listServices(callback: Callback<any[]>): void;
   listServices(options?: {}): Promise<any[]>;
 
